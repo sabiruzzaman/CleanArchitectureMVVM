@@ -48,8 +48,15 @@ class ImageListFragment : Fragment() {
             if (it.images.isNotEmpty()) {
                 adapter.submitList(it.images)
             }
-        }
+            if (it.error != "") {
+                Toast.makeText(
+                    requireContext(),
+                    "Couldn't reach server. Check your Internet Connection",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
 
+        }
 
 
     }
